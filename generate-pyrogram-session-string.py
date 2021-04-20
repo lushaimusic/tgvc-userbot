@@ -1,4 +1,4 @@
-"""Generate Pyrogra Session String and send it to
+"""Generate Pyrogram Session String and send it to
 Saved Messages of your Telegram account
 
 requirements:
