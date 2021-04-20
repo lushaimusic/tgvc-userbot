@@ -1,4 +1,4 @@
-# import logging
+# import loggin
 from pyrogram import Client, idle
 
 PLUGINS = dict(
