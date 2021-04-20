@@ -1,8 +1,8 @@
 {
-  "name": "Telegram Voice Chat Music Player UserBot (tgvc-userbot)",
+  "name": "Telegram Voice Chat Music Player UserBot (tg-vc-userbot)",
   "description": "Telegram UserBot to Play Audio in Telegram Voice Chats",
-  "repository": "https://github.com/callsmusic/tgvc-userbot",
-  "logo": "https://i.imgur.com/I1jB4i5.jpg",
+  "repository": "https://github.com/ZauTeKm/tg-vc-userbot",
+  "logo": "https://telegra.ph/file/5aa6831a02681836c1843.jpg",
   "keywords": [
     "tgvc-userbot",
     "telegram",
