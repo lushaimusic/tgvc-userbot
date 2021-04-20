@@ -28,7 +28,7 @@ along with this userbot.
   member of the group can use the `!play` and other common commands now,
   check `!help` for more commands
 
-Check [smart-plugins](https://github.com/callsmusic/tgvc-userbot/tree/smart-plugins)
+Check [smart-plugins](https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
 branch If you want to use `radio` or `recorder` plugin.
 
 ## Introduction
