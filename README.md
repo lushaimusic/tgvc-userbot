@@ -18,7 +18,7 @@ along with this userbot.
 - Generate Pyrogram session string by
   running [generate-pyrogram-session-string.py](generate-pyrogram-session-string.py)
   by yourself or
-  through [Replit](https://replit.com/@dashezup/generate-pyrogram-session-string)
+  through [Replit](https://replit.com/@ZauteKm/generate-pyrogram-session-string)
 - Enable the worker after deploy the project to Heroku
 - send `!ping`, `!uptime`, or `!sysinfo` from userbot account itself or its
   contacts to check if the userbot is running
