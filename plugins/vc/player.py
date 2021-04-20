@@ -1,7 +1,7 @@
 """
 
     tgvc-userbot, Telegram Voice Chat Userbot
-    Copyright (C) 2021  Dash Eclipse
+    Copyright (C) 2021  ZauTe Km
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -79,7 +79,7 @@ __starts with ! (exclamation mark)__
 
 USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
 
-- Repository: [GitHub](https://github.com/callsmusic/tgvc-userbot)
+- Repository: [GitHub](https://github.com/ZauTeKm/tg-vc-userbot)
 - License: AGPL-3.0-or-later"""
 
 
