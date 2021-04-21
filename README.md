@@ -32,7 +32,7 @@ Click the below button to watch the video tutorial on deploying
 
 <b> Deploy to Heroku </b>
 [![telegram vc userbot logo](https://telegra.ph/file/4ec6be88f29de3ba304b7.jpg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/smart/plugins)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
 
 - Enable the worker after deploy the project to Heroku
 - send `!ping`, `!uptime`, or `!sysinfo` from userbot account itself or its contacts to check if the userbot is running or not.
