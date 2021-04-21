@@ -1,147 +1,123 @@
 # Telegram Voice Chat UserBot
 
-A Telegram UserBot to Play Audio in Voice Chats.
+A Telegram UserBot to Play music 🎶 in Voice Chats.
 
-This is also the source code of the userbot which is being used for playing
-Any Requests Group music in [ZauTe Support](https://t.me/ZauTeSupport) group.
+It's recommended to use an USA number.(if your real number is suspended I'm not responsible.use at your own risks) no grauanty no waranty
+Use at your own risks..
 
-Made with [tgcalls](https://github.com/MarshalX/tgcalls)
-and [Pyrogram Smart Plugin](https://docs.pyrogram.org/topics/smart-plugins)
+## Give your 💙
 
-It's recommended to use [tgmusicbot](https://github.com/ZauTeKm/tgmusicbot)
-along with this userbot.
+Before clicking on deploy to heroku just click on fork and star just below
 
-## Deploy to Heroku
+<p align="center">
+  <a href="https://github.com/ZauTeKm/tg-vc-userbot/fork">
+    <img src="https://img.shields.io/github/forks/ZauTeKm/tg-vc-userbot?label=Fork&style=social">
+    
+  </a>
+  <a href="https://github.com/ZauTeKm/tg-vc-userbot">
+    <img src="https://img.shields.io/github/stars/ZauTeKm/tg-vc-userbot?style=social">
+  </a>
+</p>
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
+## How to deploy 
 
-- Generate Pyrogram session string by
-  running [generate-pyrogram-session-string.py](generate-pyrogram-session-string.py)
-  by yourself or
-  through [Replit](https://replit.com/@ZauteKm/generate-pyrogram-session-string)
+Click the below button to watch the video tutorial on deploying
+
+<a href="https://youtu.be/EYLyV3VHthc"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/EYLyV3VHthc"><img src="https://img.shields.io/youtube/views/ThJQYQLcSsg?style=social">
+
+###  GET STRING SESSION FROM REPL RUN
+
+ [![Run on Repl.it](https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973)](https://replit.com/@ZauteKm/generate-pyrogram-session-string#main.py)
+
+<b> Deploy to Heroku </b>
+[![telegram vc userbot logo](https://telegra.ph/file/4ec6be88f29de3ba304b7.jpg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/smart/plugins)
+
 - Enable the worker after deploy the project to Heroku
-- send `!ping`, `!uptime`, or `!sysinfo` from userbot account itself or its
-  contacts to check if the userbot is running
-- Send `!join` to a voice chat enabled group chat from userbot account itself
-  or its contacts
-- Reply to an audio with `/play` to start playing it in the voice chat, every
-  member of the group can use the `!play` and other common commands now,
-  check `!help` for more commands
-
-Check [smart-plugins](https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
-branch If you want to use `radio` or `recorder` plugin.
-
-## Introduction
+- send `!ping`, `!uptime`, or `!sysinfo` from userbot account itself or its contacts to check if the userbot is running or not.
+- Send `!join` to a voice chat enabled group chat from userbot account itself or its contacts.
 
 **Features**
 
 - Playlist, queue
 - Loop one track when there is only one track in the playlist
-- Automatically downloads audio for the first two tracks in the playlist to
-  ensure smooth playing
+- Automatically downloads audio for the first two tracks in the playlist
+  to ensure smooth playing
 - Automatically pin the current playing track
 - Show current playing position of the audio
 
-**How to Use**
+**How to Use the Player plugin**
 
-You can't play and listen in the same voice chat at the same time, it's
-recommended to run the userbot with your alt account and control the userbot
-with your main account by adding your main account as a contact of the alt
-account.
-
-1. Start the userbot, try `!ping`, `!uptime` or `!sysinfo` command to check if
-   the bot was running.
+1. Start the userbot
 2. send `!join` to a voice chat enabled group chat from userbot account itself
-   or its contacts, be sure to make the userbot account as group admin and give
-   it at least the following permissions:
-    - Delete messages
-    - Manage voice chats (optional)
+   or its contacts, be sure to make the userbot account as group admin and
+   give it at least the following permissions:
+   - Delete messages
+   - Manage voice chats (optional)
 3. reply to an audio with `/play` to start playing it in the voice chat, every
-   member of the group can use common commands such like `/play`, `/current`
-   and `!help` now.
+   member of the group can use common commands such like `/play`, `/current` and `!help` now.
 4. check `!help` for more commands
+
+**Commands**
+
+The main plugin is `vc.player` which has the following command commands and admin commands.
+After start the bot, send `!join` to a voice chat enabeld group chat from userbot account
+itself or its contacts, and then common commands like `/play` and `/current` will be available
+to every member of the group. send `!help` to check more commands.
+
+- Common commands, available to group members of current voice chat
+- starts with / (slash) or ! (exclamation mark)
+
+| Common Commands | Description                                            |
+|-----------------|--------------------------------------------------------|
+| /play           | reply with an audio to play/queue it, or show playlist |
+| /current        | show current playing time of current track             |
+| /repo           | show git repository of the userbot                     |
+| !help           | show help for commands                                 |
+
+- Admin commands, available to userbot account itself and its contacts
+- starts with ! (exclamation mark)
+
+| Admin Commands | Description                      |
+|----------------|----------------------------------|
+| !skip [n] ...  | skip current Song!               |
+| !join          | join voice chat of current group |
+| !leave         | leave current voice chat         |
+| !vc            | check which VC is joined         |
+| !stop          | stop playing                     |
+| !replay        | play from the beginning          |
+| !clean         | remove unused RAW PCM files      |
+| !pause         | pause playing                    |
+| !resume        | resume playing                   |
+| !mute          | mute the VC userbot              |
+| !unmute        | unmute the VC userbot            |
+
+- Commands from other plugins, available only to userbot account itself
+
+| Plugin  | Commands | Description         |
+|---------|----------|---------------------|
+| ping    | !ping    | show ping time      |
+| uptime  | !uptime  | show userbot uptime |
+| sysinfo | !sysinfo | show system info    |
 
 ## Requirements
 
 - Python 3.6 or higher
-- One or two Telegram accounts, better to have one for the userbot and another
-  one as a contact of the userbot account to control it
--
-A [Telegram API key](https://docs.pyrogram.org/intro/quickstart#enjoy-the-api)
-and a Telegram account
-- Choose plugins you need, install dependencies which listed above and
-  run `pip install -U -r requirements.txt` to install python package
-  dependencies as well
+- A [Telegram API key](https://docs.pyrogram.org/intro/quickstart#enjoy-the-api) and a Telegram account
+- Choose plugins you need, install dependencies which listed above and run `pip install -U -r requirements.txt` to install python package dependencies as well
 - [FFmpeg](https://www.ffmpeg.org/)
 
 ## Run
 
 Choose one of the two methods and run the userbot with
-`python userbot.py`, stop with <kbd>CTRL+c</kbd>. The following example assume
-that you were going to use `vc.player` and `ping` plugin, replace
+`python userbot.py`, stop with <kbd>CTRL+c</kbd>. The following example
+assume that you were going to use `vc.player` and `ping` plugin, replace
 `api_id`, `api_hash` to your own value.
 
-### Method 1: use config.ini
+# Credits :
 
-Create a `config.ini` file
+This Repo Is Just A Custom Fork Of [callsmusic/tgvc-userbot](https://github.com/callsmusic/tgvc-userbot)
 
-```
-[pyrogram]
-api_id = 1234567
-api_hash = 0123456789abcdef0123456789abcdef
-
-[plugins]
-root = plugins
-include =
-    vc.player
-    ping
-    sysinfo
-```
-
-### Method 2: write your own userbot.py
-
-Replace the file content of `userbot.py`
-
-```
-from pyrogram import Client, idle
-
-api_id = 1234567
-api_hash = "0123456789abcdef0123456789abcdef"
-
-plugins = dict(
-    root="plugins",
-    include=[
-        "vc.player",
-        "ping"
-    ]
-)
-
-app = Client("tgvc", api_id, api_hash, plugins=plugins)
-app.start()
-print('>>> USERBOT STARTED')
-idle()
-app.stop()
-print('\n>>> USERBOT STOPPED')
-```
-
-# License
-
-AGPL-3.0-or-later
-
-```
-    tgvc-userbot, Telegram Voice Chat Userbot
-    Copyright (C) 2021 [@ZauTeKm](https://t.me/ZauTeKm
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-```
+Check [smart-plugins](https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
+branch If you want to use `radio` or `recorder` plugin.
