@@ -30,9 +30,11 @@ Click the below button to watch the video tutorial on deploying
 
  [![Run on Repl.it](https://camo.githubusercontent.com/05149b448485553c6f14f6430a45c12dcc79ed3c/68747470733a2f2f7265706c2e69742f62616467652f6769746875622f6a61727669733231303930342f4a6172766973)](https://replit.com/@ZauteKm/generate-pyrogram-session-string#main.py)
 
-<b> Deploy to Heroku </b>
-[![telegram vc userbot logo](https://telegra.ph/file/4ec6be88f29de3ba304b7.jpg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/tree/master)
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauteKm/MyVCbot/tree/dev)
+
+- Enable the worker after deploy the project to Heroku
 
 Change the value of `PLUGIN` variable if you want to try other voice chat
 plugins.
