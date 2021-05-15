@@ -32,7 +32,7 @@ Click the below button to watch the video tutorial on deploying
 
 <b> Deploy to Heroku </b>
 [![telegram vc userbot logo](https://telegra.ph/file/4ec6be88f29de3ba304b7.jpg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauTeKm/tg-vc-userbot/tree/master)
 
 Change the value of `PLUGIN` variable if you want to try other voice chat
 plugins.
