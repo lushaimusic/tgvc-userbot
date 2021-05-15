@@ -148,6 +148,3 @@ AGPL-3.0-or-later
 # Credits :
 
 This Repo Is Just A Custom Fork Of [callsmusic/tgvc-userbot](https://github.com/callsmusic/tgvc-userbot)
-
-Check [smart-plugins](https://github.com/ZauTeKm/tg-vc-userbot/tree/smart-plugins)
-branch If you want to use `radio` or `recorder` plugin.
