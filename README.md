@@ -10,12 +10,12 @@ Use at your own risks..
 Before clicking on deploy to heroku just click on fork and star just below
 
 <p align="center">
-  <a href="https://github.com/ZauTeKm/tg-vc-userbot/fork">
-    <img src="https://img.shields.io/github/forks/ZauTeKm/tg-vc-userbot?label=Fork&style=social">
+  <a href="https://github.com/TGBotSzK/tg-vc-userbot/fork">
+    <img src="https://img.shields.io/github/forks/TGBotSzK/tg-vc-userbot?label=Fork&style=social">
     
   </a>
   <a href="https://github.com/ZauTeKm/tg-vc-userbot">
-    <img src="https://img.shields.io/github/stars/ZauTeKm/tg-vc-userbot?style=social">
+    <img src="https://img.shields.io/github/stars/TGBotSzK/tg-vc-userbot?style=social">
   </a>
 </p>
 
@@ -24,7 +24,7 @@ Before clicking on deploy to heroku just click on fork and star just below
 Click the below button to watch the video tutorial on deploying
 
 <a href="https://youtu.be/EYLyV3VHthc"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a>
-<a href="https://youtu.be/EYLyV3VHthc"><img src="https://img.shields.io/youtube/views/ThJQYQLcSsg?style=social">
+<a href="https://youtu.be/EYLyV3VHthc"><img src="https://img.shields.io/youtube/views/EYLyV3VHthc?style=social">
 
 ###  GET STRING SESSION FROM REPL RUN
 
@@ -32,7 +32,7 @@ Click the below button to watch the video tutorial on deploying
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZauteKm/MyVCbot/tree/dev)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TGBotSzK/tg-vc-userbot)
 
 - Enable the worker after deploy the project to Heroku
 
