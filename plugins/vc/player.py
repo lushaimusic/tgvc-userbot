@@ -45,8 +45,8 @@ from pyrogram.types import Message
 from pytgcalls import GroupCall
 
 DELETE_DELAY = 8
-DURATION_AUTOPLAY_MIN = 600
-DURATION_PLAY_HOUR = 10
+DURATION_AUTOPLAY_MIN = 10
+DURATION_PLAY_HOUR = 3
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Common Commands**:
 __available to group members of current voice chat__
@@ -77,7 +77,7 @@ __starts with ! (exclamation mark)__
 
 USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
 
-- Repository: [GitHub](https://github.com/zautekm/tg-vc-userbot)
+- Repository: [GitHub](https://github.com/callsmusic/tgvc-userbot)
 - License: AGPL-3.0-or-later"""
 
 # - Pyrogram filters
@@ -175,7 +175,7 @@ async def play_track(client, m: Message):
     playlist = mp.playlist
     # check audio
     if m.audio:
-        if m.audio.duration > (DURATION_AUTOPLAY_MIN * 600):
+        if m.audio.duration > (DURATION_AUTOPLAY_MIN * 60):
             reply = await m.reply_text(
                 f"{emoji.ROBOT} audio which duration longer than "
                 f"{str(DURATION_AUTOPLAY_MIN)} min won't be automatically "
@@ -186,7 +186,7 @@ async def play_track(client, m: Message):
         m_audio = m
     elif m.reply_to_message and m.reply_to_message.audio:
         m_audio = m.reply_to_message
-        if m_audio.audio.duration > (DURATION_PLAY_HOUR * 600 * 600):
+        if m_audio.audio.duration > (DURATION_PLAY_HOUR * 60 * 60):
             reply = await m.reply_text(
                 f"{emoji.ROBOT} audio which duration longer than "
                 f"{str(DURATION_PLAY_HOUR)} hours won't be added to playlist"
@@ -277,7 +277,10 @@ async def skip_track(_, m: Message):
                     text.append(f"{emoji.WASTEBASKET} {i}. **{audio}**")
                 else:
                     text.append(f"{emoji.CROSS_MARK} {i}")
-            reply = await m.reply_text("\n".join(text))
+            reply = await m.reply_text(
+                "\n".join(text),
+                disable_web_page_preview=True
+            )
             await mp.send_playlist()
         except (ValueError, TypeError):
             reply = await m.reply_text(f"{emoji.NO_ENTRY} invalid input",
