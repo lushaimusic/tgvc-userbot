@@ -77,7 +77,7 @@ __starts with ! (exclamation mark)__
 
 USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
 
-- Repository: [GitHub](https://github.com/callsmusic/tgvc-userbot)
+- Repository: [GitHub](https://github.com/infojostel/tg-vc-userbot)
 - License: AGPL-3.0-or-later"""
 
 # - Pyrogram filters
