@@ -46,8 +46,8 @@ from pyrogram.utils import MAX_CHANNEL_ID
 from pytgcalls import GroupCallFactory, GroupCallFileAction
 
 DELETE_DELAY = 8
-DURATION_AUTOPLAY_MIN = 10
-DURATION_PLAY_HOUR = 3
+DURATION_AUTOPLAY_MIN = 600
+DURATION_PLAY_HOUR = 10
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Common Commands**:
 __available to group members of current voice chat__
