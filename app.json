@@ -1,10 +1,10 @@
 {
   "name": "Telegram Voice Chat Music Player UserBot (VC-UserBot)",
   "description": "Telegram UserBot to Play Audio in Telegram Voice Chats",
-  "repository": "https://github.com/LushaiMusic/vc-userbot",
-  "logo": "https://telegra.ph/file/9f670b987d2b3565a3bcb.jpg",
+  "repository": "https://github.com/Putraaa/VC-User-Bot",
+  "logo": "https://telegra.ph/file/d7e3d7d11b66514b22667.jpg",
   "keywords": [
-    "tgvc-userbot",
+    "VC-User-Bot",
     "telegram",
     "userbot",
     "voicechat",
