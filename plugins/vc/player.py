@@ -76,7 +76,7 @@ __starts with ! (exclamation mark)__
 \u2022 `!unmute`  unmute the VC userbot
 """
 
-USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
+USERBOT_REPO = f"""{emoji.ROBOT} **BOT BATTLE DESAH**
 
 - Repository: [GitHub](https://github.com/LushaiMusic/VC-UserBot)
 - License: AGPL-3.0-or-later"""
@@ -127,12 +127,12 @@ class MusicPlayer(object):
     async def send_playlist(self):
         playlist = self.playlist
         if not playlist:
-            pl = f"{emoji.NO_ENTRY} empty playlist"
+            pl = f"{emoji.NO_ENTRY} Ga ada daftar putar"
         else:
             if len(playlist) == 1:
-                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
+                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Daftar putar**:\n"
             else:
-                pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+                pl = f"{emoji.PLAY_BUTTON} **Daftar Putar**:\n"
             pl += "\n".join([
                 f"**{i}**. **[{x.audio.title}]({x.link})**"
                 for i, x in enumerate(playlist)
@@ -151,7 +151,7 @@ mp = MusicPlayer()
 async def network_status_changed_handler(context, is_connected: bool):
     if is_connected:
         mp.chat_id = MAX_CHANNEL_ID - context.full_chat.id
-        await send_text(f"{emoji.CHECK_MARK_BUTTON}  NAIK KE BATLLE DESAH")
+        await send_text(f"{emoji.CHECK_MARK_BUTTON}  NAIK KE VCG")
     else:
         await send_text(f"{emoji.CROSS_MARK_BUTTON} MALES AHH SUARANYA JELE")
         mp.chat_id = None
@@ -177,9 +177,9 @@ async def play_track(client, m: Message):
     if m.audio:
         if m.audio.duration > (DURATION_AUTOPLAY_MIN * 60):
             reply = await m.reply_text(
-                f"{emoji.ROBOT} audio which duration longer than "
-                f"{str(DURATION_AUTOPLAY_MIN)} min won't be automatically "
-                "added to playlist"
+                f"{emoji.ROBOT} DURASI DESAH TERLALU PANJANG "
+                f"{str(DURATION_AUTOPLAY_MIN)} DI TAMBAHKAN"
+                "Ditambahkan Ke Daftar Putar"
             )
             await _delay_delete_messages((reply,), DELETE_DELAY)
             return
@@ -188,8 +188,8 @@ async def play_track(client, m: Message):
         m_audio = m.reply_to_message
         if m_audio.audio.duration > (DURATION_PLAY_HOUR * 60 * 60):
             reply = await m.reply_text(
-                f"{emoji.ROBOT} audio which duration longer than "
-                f"{str(DURATION_PLAY_HOUR)} hours won't be added to playlist"
+                f"{emoji.ROBOT} DURASI DESAH TERLALU PANJANG "
+                f"{str(DURATION_PLAY_HOUR)} TIDAK BISA DI TAMBAHKAN"
             )
             await _delay_delete_messages((reply,), DELETE_DELAY)
             return
@@ -207,7 +207,7 @@ async def play_track(client, m: Message):
     playlist.append(m_audio)
     if len(playlist) == 1:
         m_status = await m.reply_text(
-            f"{emoji.INBOX_TRAY} downloading and transcoding..."
+            f"{emoji.INBOX_TRAY} MEMUAT DESAHAN"
         )
         await download_audio(playlist[0])
         group_call.input_filename = os.path.join(
@@ -217,7 +217,7 @@ async def play_track(client, m: Message):
         )
         await mp.update_start_time()
         await m_status.delete()
-        print(f"- START PLAYING: {playlist[0].audio.title}")
+        print(f"- MEMULAI DESAHAN: {playlist[0].audio.title}")
     await mp.send_playlist()
     for track in playlist[:2]:
         await download_audio(track)
@@ -232,7 +232,7 @@ async def show_current_playing_time(_, m: Message):
     start_time = mp.start_time
     playlist = mp.playlist
     if not start_time:
-        reply = await m.reply_text(f"{emoji.PLAY_BUTTON} unknown")
+        reply = await m.reply_text(f"{emoji.PLAY_BUTTON} WIBUU")
         await _delay_delete_messages((reply, m), DELETE_DELAY)
         return
     utcnow = datetime.utcnow().replace(microsecond=0)
@@ -283,7 +283,7 @@ async def skip_track(_, m: Message):
             )
             await mp.send_playlist()
         except (ValueError, TypeError):
-            reply = await m.reply_text(f"{emoji.NO_ENTRY} invalid input",
+            reply = await m.reply_text(f"{emoji.NO_ENTRY} GAGAL INPUT SOALNYA GA JELAS",
                                        disable_web_page_preview=True)
         await _delay_delete_messages((reply, m), DELETE_DELAY)
 
@@ -302,7 +302,7 @@ async def join_group_call(client, m: Message):
         await mp.group_call.start(m.chat.id)
         await m.delete()
     if group_call and group_call.is_connected:
-        await m.reply_text(f"{emoji.ROBOT} already joined a voice chat")
+        await m.reply_text(f"{emoji.ROBOT} GW UDAH DI VCG NGENTOD ")
 
 
 @Client.on_message(main_filter
@@ -326,12 +326,12 @@ async def list_voice_chat(client, m: Message):
         chat_id = int("-100" + str(group_call.full_chat.id))
         chat = await client.get_chat(chat_id)
         reply = await m.reply_text(
-            f"{emoji.MUSICAL_NOTES} **currently in the voice chat**:\n"
+            f"{emoji.MUSICAL_NOTES} **MENCARI TEMPAT DESAH**:\n"
             f"- **{chat.title}**"
         )
     else:
         reply = await m.reply_text(emoji.NO_ENTRY
-                                   + "didn't join any voice chat yet")
+                                   + "TIDAK BISA NAIK VCG DI MANA PUN")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -342,7 +342,7 @@ async def list_voice_chat(client, m: Message):
 async def stop_playing(_, m: Message):
     group_call = mp.group_call
     group_call.stop_playout()
-    reply = await m.reply_text(f"{emoji.STOP_BUTTON} stopped playing")
+    reply = await m.reply_text(f"{emoji.STOP_BUTTON} BERHENTI MENDESAH")
     await mp.update_start_time(reset=True)
     mp.playlist.clear()
     await _delay_delete_messages((reply, m), DELETE_DELAY)
@@ -360,7 +360,7 @@ async def restart_playing(_, m: Message):
     await mp.update_start_time()
     reply = await m.reply_text(
         f"{emoji.COUNTERCLOCKWISE_ARROWS_BUTTON}  "
-        "playing from the beginning..."
+        "MEMUTAR ULANG DESAH"
     )
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
@@ -372,7 +372,7 @@ async def restart_playing(_, m: Message):
 async def pause_playing(_, m: Message):
     mp.group_call.pause_playout()
     await mp.update_start_time(reset=True)
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} paused",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} BERHENTI",
                                quote=False)
     mp.msg['pause'] = reply
     await m.delete()
@@ -384,7 +384,7 @@ async def pause_playing(_, m: Message):
                    & filters.regex("^!resume"))
 async def resume_playing(_, m: Message):
     mp.group_call.resume_playout()
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} resumed",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} KEMBALI NYALA",
                                quote=False)
     if mp.msg.get('pause') is not None:
         await mp.msg['pause'].delete()
@@ -409,7 +409,7 @@ async def clean_raw_pcm(client, m: Message):
             if fn.endswith(".raw"):
                 count += 1
                 os.remove(os.path.join(download_dir, fn))
-    reply = await m.reply_text(f"{emoji.WASTEBASKET} cleaned {count} files")
+    reply = await m.reply_text(f"{emoji.WASTEBASKET} MEMBERSIKAN SAMPAH {count} files")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -420,7 +420,7 @@ async def clean_raw_pcm(client, m: Message):
 async def mute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(True)
-    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} muted")
+    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} BISU")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -431,7 +431,7 @@ async def mute(_, m: Message):
 async def unmute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(False)
-    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} unmuted")
+    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} SUDAH TIDAK DI BISUKAN")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -482,7 +482,7 @@ async def skip_current_playing():
     await mp.update_start_time()
     # remove old track from playlist
     old_track = playlist.pop(0)
-    print(f"- START PLAYING: {playlist[0].audio.title}")
+    print(f"- MEMULAI DESAHAN: {playlist[0].audio.title}")
     await mp.send_playlist()
     os.remove(os.path.join(
         download_dir,
