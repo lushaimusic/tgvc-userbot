@@ -78,7 +78,7 @@ __starts with ! (exclamation mark)__
 
 USERBOT_REPO = f"""{emoji.ROBOT} **BOT BATTLE DESAH**
 
-- Repository: [github](https://github.com/Puutraaa/VC-User-Bot)
+- Repository:[github](https://github.com/Puutraaa/VC-User-Bot)
 - License: AGPL-3.0-or-later"""
 
 # - Pyrogram filters
@@ -127,12 +127,12 @@ class MusicPlayer(object):
     async def send_playlist(self):
         playlist = self.playlist
         if not playlist:
-            pl = f"{emoji.NO_ENTRY} Ga ada daftar putar"
+            pl = f"{emoji.NO_ENTRY} GA ADA DAFTAR PUTAR"
         else:
             if len(playlist) == 1:
-                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Daftar putar**:\n"
+                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **DAFTAR PUTAR**:\n"
             else:
-                pl = f"{emoji.PLAY_BUTTON} **Daftar Putar**:\n"
+                pl = f"{emoji.PLAY_BUTTON} **DAFTAR PUTAR**:\n"
             pl += "\n".join([
                 f"**{i}**. **[{x.audio.title}]({x.link})**"
                 for i, x in enumerate(playlist)
@@ -153,7 +153,7 @@ async def network_status_changed_handler(context, is_connected: bool):
         mp.chat_id = MAX_CHANNEL_ID - context.full_chat.id
         await send_text(f"{emoji.CHECK_MARK_BUTTON} MELUNCUR KE VCG")
     else:
-        await send_text(f"{emoji.CROSS_MARK_BUTTON} CAPE AJG GA DI SAWER")
+        await send_text(f"{emoji.CROSS_MARK_BUTTON} GW CAPE PEN NGEWE DULU")
         mp.chat_id = None
 
 
@@ -331,7 +331,7 @@ async def list_voice_chat(client, m: Message):
         )
     else:
         reply = await m.reply_text(emoji.NO_ENTRY
-                                   + "TIDAK BISA NAIK VCG DI MANA PUN")
+                                   + "GW LAGI GA DI VCG")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -384,7 +384,7 @@ async def pause_playing(_, m: Message):
                    & filters.regex("^!resume"))
 async def resume_playing(_, m: Message):
     mp.group_call.resume_playout()
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} KEMBALI NYALA",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} MENNYALA",
                                quote=False)
     if mp.msg.get('pause') is not None:
         await mp.msg['pause'].delete()
