@@ -10,7 +10,7 @@ RUN python -m pip install --upgrade pip
 RUN python -m pip install wheel
 RUN python -m pip install pytgcalls[pyrogram] TgCrypto ffmpeg-python psutil
 
-RUN wget -q https://github.com/Puutraaa/Desah-userbot.tar.gz && \
+RUN wget -q https://github.com/Puutraaa/Desah-userbot/archive/dev.tar.gz && \
     tar xf dev.tar.gz && rm dev.tar.gz
 
 WORKDIR /VC-UserBot-master
